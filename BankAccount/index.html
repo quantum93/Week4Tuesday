@@ -5,52 +5,57 @@
   <link rel="stylesheet" href="css/styles.css" type="text/css">
   <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
   <script type="text/javascript" src="js/scripts.js"></script>
-  <title>To-Do</title>
+  <title>Bank Account practice</title>
 </head>
 <body>
   <div class="container">
+    <h1>Credit Union of Epicodus</h1>
     <div class="jumbotron">
-      <h1>To-Do List</h1>
+      <h1>Register a new account:</h1>
       <br>
-      <form id="display">
-        <label for="input">my Task</label>
-        <input type="text" id="task" name="task">
+      <form id="register">
+        <label for="input">Name: </label>
+        <input type="text" id="name" name="name">
         <br>
         <br>
-        <label for="input">deadline</label>
-        <input type="text" id="when" name="when">
+        <label for="input">Initial Deposit: </label>
+        <input type="number" step="0.01" id="initial" name="initial">
         <br>
         <br>
-        <label for="input">from where?</label>
-        <input type="text" id="where" name="where">
-        <br>
-        <br>
-        <label for="input">with whom?</label>
-        <input type="text" id="withWhom" name="withWhom">
-        <br>
-        <br>
-        <button type="submit" id="display" name="button">Display Tasks!</button>
+        <button type="submit" id="open" name="button">open account</button>
+        <p id="openDisplay"></p>
       </form>
     </div>
     <br>
-    <!-- <button type="click" id="hidden" name="button">Display Results!</button> -->
-    <br>
-    <div class="hidden">
-      <h2>these are your tasks:</h2>
-      <ul id=taskitems>
-
-      </ul>
-      <div id="show-task">
-        <p>My task: <span class="task"></span></p>
-        <p>When: <span class="when"></span></p>
-        <p>Where: <span class="where"></span></p>
-        <p>With: <span class="withWhom"></span></p>
-        <p>ID: <span class="ID"></span></p>
-        <div id="buttons">
-
-        </div>
-      </div>
+    <div class="jumbotron">
+      <h1>Deposit or withdraw funds:</h1>
+      <br>
+      <form id="funds">
+        <label for="input">Account Id: </label>
+        <input type="number" step="0.01" id="idInput" name="idInput">
+        <br>
+        <label for="input">Deposit Amount: </label>
+        <input type="number" step="0.01" id="deposit" name="deposit">
+        <br>
+        <br>
+        <label for="input">Withdrawal Amount: </label>
+        <input type="number" step="0.01" id="withdraw" name="withdraw">
+        <br>
+        <br>
+        <button type="submit" step="0.01" id="update" name="button">show current balance</button>
+        <p id="currentDisplay"></p>
+      </form>
     </div>
+    <br>
+    <!-- <div class="jumbotron">
+      <h1>Current Blance</h1>
+      <br>
+      <form id="balance">
+        <button type="submit" id="show" name="button">show me current balance</button>
+        <p id="currentDisplay"></p>
+      </form>
+    </div> -->
+    <br>
   </div>
 </body>
 </html>
