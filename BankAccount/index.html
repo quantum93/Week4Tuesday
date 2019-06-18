@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+  <script type="text/javascript" src="js/scripts.js"></script>
+  <title>To-Do</title>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>To-Do List</h1>
+      <br>
+      <form id="display">
+        <label for="input">my Task</label>
+        <input type="text" id="task" name="task">
+        <br>
+        <br>
+        <label for="input">deadline</label>
+        <input type="text" id="when" name="when">
+        <br>
+        <br>
+        <label for="input">from where?</label>
+        <input type="text" id="where" name="where">
+        <br>
+        <br>
+        <label for="input">with whom?</label>
+        <input type="text" id="withWhom" name="withWhom">
+        <br>
+        <br>
+        <button type="submit" id="display" name="button">Display Tasks!</button>
+      </form>
+    </div>
+    <br>
+    <!-- <button type="click" id="hidden" name="button">Display Results!</button> -->
+    <br>
+    <div class="hidden">
+      <h2>these are your tasks:</h2>
+      <ul id=taskitems>
+
+      </ul>
+      <div id="show-task">
+        <p>My task: <span class="task"></span></p>
+        <p>When: <span class="when"></span></p>
+        <p>Where: <span class="where"></span></p>
+        <p>With: <span class="withWhom"></span></p>
+        <p>ID: <span class="ID"></span></p>
+        <div id="buttons">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
