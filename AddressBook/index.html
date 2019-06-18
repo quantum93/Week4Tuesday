@@ -1,54 +1,105 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
-    <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
-    <script type="text/javascript" src="js/scripts.js"></script>
-    <title>Address Book</title>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Address Book</h1>
-      <div class="row">
-        <div class="col-md-6">
-          <hr>
-          <h2>Add a Contact:</h2>
-          <form id="new-contact">
-            <div class="form-group">
-              <label for="new-first-name">First Name</label>
-              <input type="text"  class="form-control" id="new-first-name">
-            </div>
-            <div class="form-group">
-              <label for="new-last-name">Last Name</label>
-              <input type="text"  class="form-control" id="new-last-name">
-            </div>
-            <div class="form-group">
-              <label for="new-phone-number">Phone Number</label>
-              <input type="text"  class="form-control" id="new-phone-number">
-            </div>
-            <div class="form-group">
-              <label for="email">email address</label>
-              <input type="text"  class="form-control" id="email">
-            </div>
-            <button type="submit" class="btn-primary">Add</button>
-          </form>
-          <hr>
-          <h2>Contacts:</h2>
-          <ul id="contacts">
-          </ul>
-        </div>
-        <div class="col-md-6">
-          <div id="show-contact">
-            <p>First Name: <span class="first-name"></span></p>
-            <p>Last Name: <span class="last-name"></span></p>
-            <p>Phone Number: <span class="phone-number"></span></p>
-            <p>email: <span class="email"></span></p>
-            <div id="buttons">
-            </div>
+<head>
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+  <script type="text/javascript" src="js/scripts.js"></script>
+  <title>Address Book</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Address Book</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <hr>
+        <h2>Add a Contact:</h2>
+        <form id="new-contact">
+          <div class="form-group">
+            <label for="new-first-name">First Name</label>
+            <input type="text"  class="form-control" id="new-first-name">
+          </div>
+          <div class="form-group">
+            <label for="new-last-name">Last Name</label>
+            <input type="text"  class="form-control" id="new-last-name">
+          </div>
+          <div class="form-group">
+            <label for="new-phone-number">Phone Number</label>
+            <input type="text"  class="form-control" id="new-phone-number">
+          </div>
+          <div class="form-group">
+            <label for="email">email address</label>
+            <input type="text"  class="form-control" id="email">
+          </div>
+          <br>
+          <p>mailing address</p>
+          <div class="form-group">
+            <label for="m-street">state</label>
+            <input type="text"  class="form-control" id="m-street">
+          </div>
+          <div class="form-group">
+            <label for="m-city">City</label>
+            <input type="text"  class="form-control" id="m-city">
+          </div>
+          <div class="form-group">
+            <label for="m-zipcode">Zipcode</label>
+            <input type="text"  class="form-control" id="m-zipcode">
+          </div>
+          <div class="form-group">
+            <label for="m-state">State</label>
+            <input type="text"  class="form-control" id="m-state">
+          </div>
+          <br>
+          <p>billing address</p>
+          <div class="form-group">
+            <label for="b-street">Street</label>
+            <input type="text"  class="form-control" id="b-street">
+          </div>
+          <div class="form-group">
+            <label for="b-city">City</label>
+            <input type="text"  class="form-control" id="b-city">
+          </div>
+          <div class="form-group">
+            <label for="b-zipcode">Zipcode</label>
+            <input type="text"  class="form-control" id="b-zipcode">
+          </div>
+          <div class="form-group">
+            <label for="b-state">State</label>
+            <input type="text"  class="form-control" id="b-state">
+          </div>
+
+          <button type="submit" class="btn-primary">Add</button>
+        </form>
+        <hr>
+        <h2>Contacts:</h2>
+        <ul id="contacts">
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <div id="show-contact">
+          <p>First Name: <span class="first-name"></span></p>
+          <p>Last Name: <span class="last-name"></span></p>
+          <p>Phone Number: <span class="phone-number"></span></p>
+          <p>email: <span class="email"></span></p>
+          <div id="show-m">
+            <p>mailing address</p>
+            <p>street: <span class="m-street"></span></p>
+            <p>city: <span class="m-city"></span></p>
+            <p>zipcode: <span class="m-zipcode"></span></p>
+            <p>state: <span class="m-state"></span></p>
+          </div>
+          <div id="show-b">
+            <p>billing address</p>
+            <p>street: <span class="b-street"></span></p>
+            <p>city: <span class="b-city"></span></p>
+            <p>zipcode: <span class="b-zipcode"></span></p>
+            <p>state: <span class="b-state"></span></p>
+          </div>
+          <div id="buttons">
           </div>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
 </html>
