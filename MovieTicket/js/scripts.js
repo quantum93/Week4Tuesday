@@ -1,122 +1,53 @@
 // ------------ Back-end logic ------------------
-function ToDoList() {
-  //currentId will be started with 1 rather than 0 because 0 is for empty array.
-  // But be aware of independence of myTasks' index and index of currentId.
-  // The index of myTasks is strating with zero but the currentId itself is starting with 1.
-  // So, the array data of id 1 is the myTasks[0] rather than myTasks[1].
-  this.myTasks = [];
-  this.currentId = 0;
+
+function Ticket(movie, age, day) {
+  this.movie = movie;
+  this.age = age;
+  this.day = day;
 }
 
-ToDoList.prototype.addTask = function(myTask) {
-  myTask.id = this.assignId();
-  this.myTasks.push(myTask);
-}
+Ticket.prototype.yourPrice = function() {
+  var price, r;
+  price = r = 10;
 
-ToDoList.prototype.assignId = function() {
-  // Here, the first Id of myTasks is starting with 1 rather than 0. There is
-  // no data array with index of zero.
-  this.currentId += 1;
-  return this.currentId;
-}
+  var today = new Date();
+  var current_day = today.getDate();
 
-ToDoList.prototype.findTask = function(id) {
-  // Here the findTask index is starting with currentId number, which means 1 rather than 0.
-  for (var i = 0; i < this.myTasks.length; i++) {
-    if (this.myTasks[i]) {
-      if (this.myTasks[i].id == id) {
-        return this.myTasks[i];
-      }
-    }
-  };
-  return false;
-}
+// IF you apply a combination of if and it becomes exponential to consider every cases....
+// Using intermediate variable to make it fresh for every different if condition's price,
+// it becomes more consise implementation of writing.
+  if (this.movie === "first-release")
+    price = price + ((r * 1.3)-r)
+    // price += (r * 1.3) - r
+  if (this.age < 10){
+    price -= r-(r * 0.7)
+    // price = price - (r-(r * 0.7))
+  }
+  if(this.age > 60){
+    price -= r -(r * 0.8)
+    // price = price - (r-(r * 0.8))
+  }
+  if (this.day < (current_day + 7))
+    price += (r * 1.1) - r
+    // price = price + ()(r * 1.1) - r)
 
-ToDoList.prototype.deleteTask = function(id) {
-  // Here the findTask index is starting with currentId number, which means 1 rather than 0.
-  for(var i = 0; i < this.myTasks.length; i++) {
-    if (this.myTasks[i]) {
-      if (this.myTasks[i].id == id) {
-        delete this.myTasks[i];
-        return true;
-      }
-    }
-  };
-  return false;
+  return price
 }
-
-function Task(task, when, where, withWhom) {
-  this.task = task;
-  this.when = when;
-  this.where = where;
-  this.withWhom = withWhom;
-}
-
-// Task.prototype.completed = function() {
-  //   return this.task + " was completed at " + this.when;
-  // }
 
   // ---------- User interface logic --------------
-  var toDoList = new ToDoList();
-
-  function displayTaskDetails(toDoListDisplay) {
-    var myTasksList = $("ul#taskitems");
-    var htmlFormyTasksInfo = "";
-    toDoListDisplay.myTasks.forEach(function(myTask) {
-      htmlFormyTasksInfo += "<li id=" + myTask.id + ">" + myTask.task + " " + myTask.when + " " + myTask.where + " " + myTask.withWhom + "</li>";
-    });
-    myTasksList.html(htmlFormyTasksInfo);
-  }
-
-  function showmyTask(taskId) {
-    // The variable myTask is only connected with myTask in displayTaskDetails function
-    // and later on myTask variable is redefined in jQuery loop in below.
-    // This might be a great way to do in complied language but it works here.....
-    var myTask = toDoList.findTask(taskId);
-    $("#show-task").show();
-    $(".task").html(myTask.task);
-    $(".when").html(myTask.when);
-    $(".where").html(myTask.where);
-    $(".withWhom").html(myTask.withWhom);
-    $(".ID").html(myTask.id);
-    var buttons = $("#buttons");
-    buttons.empty();
-    buttons.append("<button class='deleteButton' id=" + myTask.id + ">Delete</button>");
-  }
-
-  function attachmyTaskListeners() {
-    $("ul#taskitems").on("click", "li", function() {
-      showmyTask(this.id);
-    });
-    // Code below here is new!
-    $("#buttons").on("click", ".deleteButton", function() {
-      toDoList.deleteTask(this.id);
-      $("#show-task").hide();
-      displayTaskDetails(toDoList);
-    });
-  };
-
 
   $(document).ready(function() {
-    attachmyTaskListeners()
     $("#display").submit(function(event) {
       event.preventDefault();
-      var task = $("input#task").val()
-      var when = $("input#when").val()
-      var where = $("input#where").val()
-      var withWhom = $("input#withWhom").val()
-      var myTask = new Task(task,when,where,withWhom);
-      toDoList.addTask(myTask);
-      displayTaskDetails(toDoList)
-      console.log(myTask);
-
+      var movie = $("input#movie").val()
+      var age = $("input#age").val()
+      var day = $("input#day").val()
+      var ticket = new Ticket(movie, age, day);
+      var price = ticket.yourPrice()
+      $("#show-task").show();
+      $(".movie").text(movie)
+      $(".age").text(age)
+      $(".day").text(day)
+      $(".price").text(price)
     });
-
-    // $("#hidden").click(function(event) {
-      //   event.preventDefault();
-      // $(".hidden").append(toDoList.myTasks[0].task);
-      // $(".hidden").append(toDoList.myTasks[1].task);
-      // $(".hidden").show();
-      // });
-
-    });
+});

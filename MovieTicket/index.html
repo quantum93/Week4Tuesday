@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,50 +6,43 @@
   <link rel="stylesheet" href="css/styles.css" type="text/css">
   <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
   <script type="text/javascript" src="js/scripts.js"></script>
-  <title>To-Do</title>
+  <title>Information of Movie Ticket</title>
 </head>
 <body>
   <div class="container">
     <div class="jumbotron">
-      <h1>To-Do List</h1>
+      <h1>Information of Movie Ticket</h1>
       <br>
       <form id="display">
-        <label for="input">my Task</label>
-        <input type="text" id="task" name="task">
+        <select>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
         <br>
         <br>
-        <label for="input">deadline</label>
-        <input type="text" id="when" name="when">
+        <label for="input">My Age</label>
+        <input type="number" id="age" name="age">
         <br>
         <br>
-        <label for="input">from where?</label>
-        <input type="text" id="where" name="where">
+        <label for="input">Day of playtime</label>
+        <input type="text" id="day" name="day">
         <br>
         <br>
-        <label for="input">with whom?</label>
-        <input type="text" id="withWhom" name="withWhom">
-        <br>
-        <br>
-        <button type="submit" id="display" name="button">Display Tasks!</button>
+        <button type="submit" id="display" name="button">Display my Price!</button>
       </form>
     </div>
     <br>
-    <!-- <button type="click" id="hidden" name="button">Display Results!</button> -->
+
     <br>
     <div class="hidden">
-      <h2>these are your tasks:</h2>
-      <ul id=taskitems>
-
-      </ul>
+      <h2>these are your ticket price information:</h2>
       <div id="show-task">
-        <p>My task: <span class="task"></span></p>
-        <p>When: <span class="when"></span></p>
-        <p>Where: <span class="where"></span></p>
-        <p>With: <span class="withWhom"></span></p>
-        <p>ID: <span class="ID"></span></p>
-        <div id="buttons">
-
-        </div>
+        <p>Movie title: <span class="movie"></span></p>
+        <p>Your age: <span class="age"></span></p>
+        <p>Day of play: <span class="day"></span></p>
+        <p>Your price: <span class="price"></span></p>
       </div>
     </div>
   </div>
