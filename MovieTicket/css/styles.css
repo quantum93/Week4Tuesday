@@ -1,3 +1,7 @@
 #show-task {
   display: none;
 }
+
+#day-warning {
+  display: none;
+}

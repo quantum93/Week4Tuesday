@@ -14,11 +14,15 @@
       <h1>Information of Movie Ticket</h1>
       <br>
       <form id="display">
-        <select>
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
+        <select class="movieInput">
+          <option value="Aladdin">Aladdin</option>
+          <option value="Godzilla">Godzilla</option>
+          <option value="The secret life of Pets">The secret life of Pets</option>
+          <option value="Man in Black 2">Man in Black 2</option>
+          <option value="Late Night">Late Night</option>
+          <option value="Shaft">Shaft</option>
+          <option value="John Wick 3">John Wick 3</option>
+          <option value="Dark Phoenix">Dark Phoenix</option>
         </select>
         <br>
         <br>
@@ -27,7 +31,36 @@
         <br>
         <br>
         <label for="input">Day of playtime</label>
-        <input type="text" id="day" name="day">
+        <select class="month" name="month">
+          <option value="0">Jan</option>
+          <option value="1">Feb</option>
+          <option value="2">Mar</option>
+          <option value="3">Apr</option>
+          <option value="4">May</option>
+          <option value="5">Jun</option>
+          <option value="6">Jul</option>
+          <option value="7">Aug</option>
+          <option value="8">Sep</option>
+          <option value="9">Oct</option>
+          <option value="10">Nov</option>
+          <option value="11">Dec</option>
+        </select>
+        <select class="day">
+
+        </select>
+
+        <br>
+        <p id="day-warning">We don't have that days in list!</p>
+        <br>
+        <select class="playtime">
+          <option value="9">9:00 am</option>
+          <option value="11">11:00 am</option>
+          <option value="13">1:00 pm</option>
+          <option value="15">3:00 pm</option>
+          <option value="17">5:00 pm</option>
+          <option value="19">7:00 pm</option>
+          <option value="21">9:00 pm</option>
+        </select>
         <br>
         <br>
         <button type="submit" id="display" name="button">Display my Price!</button>
@@ -42,6 +75,8 @@
         <p>Movie title: <span class="movie"></span></p>
         <p>Your age: <span class="age"></span></p>
         <p>Day of play: <span class="day"></span></p>
+        <p>Time: <span class="playtime"></span></p>
+        
         <p>Your price: <span class="price"></span></p>
       </div>
     </div>
