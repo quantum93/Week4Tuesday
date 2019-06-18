@@ -2,7 +2,7 @@
 
 #### to-do list display program. 6/17/2019
 
-#### By **Tae Lee** **Jake Irwin**
+#### By **Tae Lee** **Ben Martinson**
 
 ## Description
 
